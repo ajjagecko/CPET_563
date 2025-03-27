@@ -1,0 +1,11 @@
+
+leftImds = imageDatastore({'labAssignment3\DetectCirclesExample_01.jpg'});
+
+[leftImgMod, info] = readimage(leftImds,1)
+
+%imagesc(leftImgMod);
+ 
+[leftC, leftR] = imfindcircles(leftImgMod,[ ],ObjectPolarity="dark",Sensitivity=0.5)
+
+imshow(leftImgMod);
+viscircles(leftC, leftR);
